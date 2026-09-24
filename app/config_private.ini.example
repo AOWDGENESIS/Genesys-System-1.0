@@ -1,0 +1,8 @@
+# Beispiel für config_private.ini
+# Diese Datei NICHT einchecken (steht in .gitignore)!
+# Keys werden automatisch nie geloggt (maskiert).
+
+[API_KEYS]
+gemini =
+huggingface =
+openai =

@@ -1,0 +1,34 @@
+# GENESIS SYSTEM — Ruff-Konfiguration (statische Codequalität)
+# Nutzung: ruff check .
+
+target-version = "py310"
+exclude = [".venv", "venv", "GENESIS_STORAGE"]
+
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "B",   # bugbear (häufige Bugs)
+    "UP",  # pyupgrade (moderne Syntax)
+    "SIM", # simplification
+    "PL",  # pylint-Regeln
+]
+ignore = [
+    "E501",     # Zeilenlänge: Lesbarkeit > hartes Limit (Doku-Strings)
+    "SIM108",   # Ternär-Refactoring nicht erzwingen
+    "PLR2004",  # Magic Numbers in Tests sind ok
+    "PLR0913",  # viele Argumente bei Engine-APIs ist hier Architektur
+    "PLR0912",  # viele Branches in Render-Pipelines ok
+    "PLR0915",  # viele Statements in Render-Pipelines ok
+    "PLC0415",  # Funktion lokale Imports sind Teil des Designs:
+                #   a) optionale KI-Backends (huggingface/google) nur bei Nutzung laden
+                #   b) GUI-Tabs laden ihre Module lazy → schneller Start
+                #   c) Circular-Import-Vermeidung (generator ↔ compliance)
+]
+
+[lint.per-file-ignores]
+# Imports bewusst NACH dem Tkinter-Guard (sonst Crash-Traceback statt Hilfe)
+"control_panel.py" = ["E402"]
+# Tests: Fixtures/Marker sind Standard
+"tests/*" = ["PLR0914"]

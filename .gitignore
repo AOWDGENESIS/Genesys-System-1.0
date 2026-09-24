@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+GENESIS_STORAGE/
+installer/Output/
+*.log

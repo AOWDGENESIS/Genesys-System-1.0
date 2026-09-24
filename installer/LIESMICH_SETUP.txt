@@ -1,0 +1,13 @@
+Willkommen beim Installations-Assistenten von ZEICHENWERK (GENESIS SYSTEM)!
+
+Dieser Assistent entpackt die Programmdateien und richtet danach
+automatisch ein:
+  - Python-Umgebung (wird bei Bedarf installiert)
+  - Programm-Starter (Desktop + Startmenue)
+  - Eintrag unter "Apps & Features" mit Deinstallation
+
+Klicken Sie auf "Weiter", um zu beginnen.
+
+Hinweis: Es werden KEINE Admin-Rechte benoetigt (Installation
+pro Benutzer). Designs und Einstellungen bleiben bei einer
+Deinstallation erhalten.

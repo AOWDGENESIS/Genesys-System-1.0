@@ -1,0 +1,240 @@
+# ============================================================
+# GENESIS SYSTEM / Zeichenwerk — Compliance-Regelwerk
+# Schema: PRUEFSYSTEM_SCHEMA_V1.0 (Version 2)
+# 9 Kategorien, >= 141 geschützte Begriffe
+# Prüf-Reihenfolge = check_order (niedrig zuerst)
+# severity: block = Upload verbieten | warn = Warnung anzeigen
+# ============================================================
+
+schema: PRUEFSYSTEM_SCHEMA_V1.0
+version: 2
+similarity_threshold: 0.88
+
+categories:
+  - id: extremism
+    name_de: "Extremismus / Verfassungsfeindlich"
+    check_order: 1
+    severity: block
+    terms:
+      - nazi
+      - nazis
+      - nsdap
+      - hitler
+      - himmler
+      - goebbels
+      - gestapo
+      - waffen-ss
+      - neo-nazi
+      - kkk
+      - ku klux klan
+      - white power
+      - aryan race
+      - master race
+
+  - id: hate_symbols
+    name_de: "Hasssymbole"
+    check_order: 2
+    severity: block
+    terms:
+      - swastika
+      - hakenkreuz
+      - ss-totenkopf
+      - odal-rune
+      - schwarze sonne
+      - black sun
+      - confederate battle flag
+      - kkk-hood
+
+  - id: sovereign
+    name_de: "Staatliche Hoheitszeichen"
+    check_order: 3
+    severity: warn
+    terms:
+      - bundesadler
+      - bundeswappen
+      - bundeswehr emblem
+      - fbi
+      - cia
+      - nasa
+      - interpol
+      - scotland yard
+      - homeland security
+      - european union flag
+
+  - id: brands
+    name_de: "Geschützte Marken (Tech/Sport/Luxury/Food/Entertainment)"
+    check_order: 4
+    severity: block
+    terms:
+      # --- Tech ---
+      - apple
+      - iphone
+      - ipad
+      - macbook
+      - samsung
+      - galaxy
+      - playstation
+      - xbox
+      - nintendo
+      - google
+      - microsoft
+      - windows
+      - android
+      - tiktok
+      - instagram
+      - facebook
+      - netflix
+      # --- Sport ---
+      - nike
+      - adidas
+      - puma
+      - under armour
+      - reebok
+      - new balance
+      - jordan
+      - champion
+      - converse
+      - vans
+      # --- Luxury ---
+      - gucci
+      - louis vuitton
+      - chanel
+      - prada
+      - hermes
+      - rolex
+      - versace
+      - balenciaga
+      # --- Food ---
+      - coca cola
+      - pepsi
+      - mcdonalds
+      - starbucks
+      - burger king
+      - redbull
+      - monster energy
+      - nutella
+      # --- Entertainment ---
+      - disney
+      - marvel
+      - dc comics
+      - pokemon
+      - lego
+      - barbie
+
+  - id: characters
+    name_de: "Geschützte Figuren / Franchise"
+    check_order: 5
+    severity: block
+    terms:
+      - mickey mouse
+      - minnie mouse
+      - donald duck
+      - spongebob
+      - pikachu
+      - super mario
+      - zelda
+      - sonic the hedgehog
+      - batman
+      - superman
+      - spider-man
+      - iron man
+      - hulk
+      - captain america
+      - thor
+      - harry potter
+      - hermione granger
+      - darth vader
+      - yoda
+      - grogu
+      - elsa
+      - shrek
+      - minions
+      - bugs bunny
+      - scooby doo
+      - hello kitty
+      - paw patrol
+      - teenage mutant ninja turtles
+      - rick sanchez
+      - goku
+
+  - id: copyright
+    name_de: "Urheberrecht"
+    check_order: 6
+    severity: block
+    terms:
+      - star wars
+      - lord of the rings
+      - der herr der ringe
+      - the hobbit
+      - der kleine hobbit
+      - game of thrones
+      - breaking bad
+      - stranger things
+      - the simpsons
+      - rick and morty
+      - naruto
+      - one piece
+
+  - id: discrimination
+    name_de: "Diskriminierung"
+    check_order: 7
+    severity: block
+    terms:
+      - race war
+      - racial purity
+      - ethnic cleansing
+      - holocaust denial
+      - holocaustleugnung
+      - antisemit
+      - antisemite
+      - islamophobe
+      - homophobe
+      - women belong in the kitchen
+      - frauen gehoeren in die kueche
+      - go back to your country
+
+  - id: politics
+    name_de: "Politik"
+    check_order: 8
+    severity: warn
+    terms:
+      - donald trump
+      - joe biden
+      - angela merkel
+      - olaf scholz
+      - friedrich merz
+      - afd
+      - npd
+      - cdu
+      - spd
+      - republican party
+
+  - id: other_risk
+    name_de: "Sonstige rechtliche Risiken"
+    check_order: 9
+    severity: warn
+    terms:
+      - falschgeld
+      - counterfeit
+      - fake id
+      - fake impfpass
+      - fake vaccine card
+      - drogen verkauf
+      - drug dealing
+      - doxxing
+
+# Erlaubte generische Begriffe (Ausnahmen, z.B. wenn eine Marke
+# gleichzeitig ein normales Wort ist)
+whitelist:
+  - apple pie
+  - apple juice
+  - apple tree
+  - apple orchard
+  - amazon rainforest
+  - window cleaning
+  - windows cleaning
+  - galaxy print
+  - jokes champion
+  - witz champion
+  - channel
+  - heroes
